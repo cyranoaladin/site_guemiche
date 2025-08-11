@@ -1,0 +1,20 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0b5fff"/>
+      <stop offset="50%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#ff1f3d"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#g)"/>
+  <rect x="40" y="40" width="1120" height="550" rx="24" fill="rgba(255,255,255,0.8)"/>
+  <text x="100" y="200" font-family="Arial, Helvetica, sans-serif" font-size="56" font-weight="700" fill="#0f172a">
+    Objectif la Mention au Bac
+  </text>
+  <text x="100" y="280" font-family="Arial, Helvetica, sans-serif" font-size="36" fill="#334155">
+    Dominer l’épreuve de mathématiques au baccalauréat
+  </text>
+  <text x="100" y="360" font-family="Arial, Helvetica, sans-serif" font-size="28" fill="#475569">
+    Cours, exercices et conseils pour exceller.
+  </text>
+</svg>
