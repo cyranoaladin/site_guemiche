@@ -1,162 +1,254 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { AcademicCapIcon } from '@heroicons/react/24/outline';
 import { 
+  AcademicCapIcon,
   EnvelopeIcon, 
   PhoneIcon, 
-  MapPinIcon 
+  MapPinIcon,
+  HeartIcon,
+  SparklesIcon
 } from '@heroicons/react/24/outline';
 
 const Footer = () => {
   const footerLinks = {
     platform: [
-      { name: 'Comment ça marche', href: '#' },
-      { name: 'Nos tuteurs', href: '#' },
-      { name: 'Tarifs', href: '#' },
-      { name: 'Témoignages', href: '#' }
+      { name: 'Comment ça marche', href: '#how-it-works' },
+      { name: 'Nos tuteurs', href: '#tutors' },
+      { name: 'Diagnostic gratuit', href: '#diagnostic' },
+      { name: 'Témoignages', href: '#testimonials' }
+    ],
+    subjects: [
+      { name: 'Mathématiques', href: '#math' },
+      { name: 'Sciences Physiques', href: '#physics' },
+      { name: 'Français', href: '#french' },
+      { name: 'Langues', href: '#languages' }
     ],
     support: [
-      { name: 'Centre d\'aide', href: '#' },
-      { name: 'Contact', href: '#' },
-      { name: 'FAQ', href: '#' },
-      { name: 'Blog', href: '#' }
+      { name: 'Centre d\'aide', href: '#help' },
+      { name: 'Contact', href: '#contact' },
+      { name: 'FAQ', href: '#faq' },
+      { name: 'Blog', href: '#blog' }
     ],
     legal: [
-      { name: 'Mentions légales', href: '#' },
-      { name: 'Politique de confidentialité', href: '#' },
-      { name: 'CGU', href: '#' },
-      { name: 'Cookies', href: '#' }
+      { name: 'Mentions légales', href: '#legal' },
+      { name: 'Politique de confidentialité', href: '#privacy' },
+      { name: 'CGU', href: '#terms' },
+      { name: 'Cookies', href: '#cookies' }
     ]
   };
 
+  const socialLinks = [
+    { name: 'Facebook', href: '#', icon: '📘' },
+    { name: 'Instagram', href: '#', icon: '📷' },
+    { name: 'LinkedIn', href: '#', icon: '💼' },
+    { name: 'YouTube', href: '#', icon: '📺' },
+  ];
+
   return (
-    <footer className="bg-gray-900 text-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
-          {/* Brand */}
+    <footer className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white relative overflow-hidden">
+      {/* Background decorations */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-20 left-20 w-40 h-40 bg-gradient-to-br from-primary-500/20 to-accent-500/20 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 right-20 w-56 h-56 bg-gradient-to-br from-coral-500/20 to-warm-500/20 rounded-full blur-3xl"></div>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-12">
+          {/* Brand Section */}
           <div className="lg:col-span-2">
             <motion.div 
-              className="flex items-center space-x-2 mb-6"
+              className="flex items-center space-x-3 mb-6"
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
               whileHover={{ scale: 1.05 }}
             >
-              <div className="w-10 h-10 bg-gradient-to-br from-primary-500 to-accent-500 rounded-xl flex items-center justify-center">
-                <AcademicCapIcon className="w-6 h-6 text-white" />
+              <div className="relative">
+                <div className="w-12 h-12 bg-gradient-to-br from-primary-500 via-accent-500 to-coral-500 rounded-2xl flex items-center justify-center shadow-glow">
+                  <AcademicCapIcon className="w-7 h-7 text-white" />
+                </div>
+                <motion.div
+                  className="absolute -top-1 -right-1 w-4 h-4 bg-warm-400 rounded-full flex items-center justify-center"
+                  animate={{ scale: [1, 1.2, 1] }}
+                  transition={{ duration: 2, repeat: Infinity }}
+                >
+                  <SparklesIcon className="w-2.5 h-2.5 text-white" />
+                </motion.div>
               </div>
-              <span className="text-2xl font-display font-bold">
-                Objectif la <span className="text-gradient">Mention</span> au Bac
-              </span>
+              <div>
+                <span className="text-2xl font-display font-bold">
+                  Objectif la <span className="text-gradient-warm">Mention</span> au Bac
+                </span>
+                <div className="text-xs text-gray-400 font-medium">Excellence & Bienveillance</div>
+              </div>
             </motion.div>
             
-            <p className="text-gray-300 mb-6 leading-relaxed">
+            <motion.p
+              className="text-gray-300 mb-8 leading-relaxed"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2, duration: 0.6 }}
+            >
               Des méthodes claires, une motivation durable, des résultats tangibles. 
-              Rejoignez notre communauté de réussite au Bac.
-            </p>
+              Rejoignez notre communauté de réussite et transformez votre parcours scolaire.
+            </motion.p>
 
             {/* Contact Info */}
-            <div className="space-y-3">
-              <div className="flex items-center space-x-3">
-                <EnvelopeIcon className="w-5 h-5 text-accent-400" />
-                <span className="text-gray-300">contact@nextgen-cours.fr</span>
-              </div>
-              <div className="flex items-center space-x-3">
-                <PhoneIcon className="w-5 h-5 text-accent-400" />
-                <span className="text-gray-300">01 23 45 67 89</span>
-              </div>
-              <div className="flex items-center space-x-3">
-                <MapPinIcon className="w-5 h-5 text-accent-400" />
-                <span className="text-gray-300">Paris, France</span>
-              </div>
+            <motion.div
+              className="space-y-4"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.4, duration: 0.6 }}
+            >
+              <motion.div 
+                className="flex items-center space-x-3 group cursor-pointer"
+                whileHover={{ x: 5 }}
+                transition={{ duration: 0.2 }}
+              >
+                <div className="w-10 h-10 bg-gradient-to-br from-primary-500 to-accent-500 rounded-xl flex items-center justify-center group-hover:shadow-glow transition-all duration-300">
+                  <EnvelopeIcon className="w-5 h-5 text-white" />
+                </div>
+                <span className="text-gray-300 group-hover:text-white transition-colors">contact@objectif-mention-bac.fr</span>
+              </motion.div>
+              
+              <motion.div 
+                className="flex items-center space-x-3 group cursor-pointer"
+                whileHover={{ x: 5 }}
+                transition={{ duration: 0.2 }}
+              >
+                <div className="w-10 h-10 bg-gradient-to-br from-accent-500 to-coral-500 rounded-xl flex items-center justify-center group-hover:shadow-glow transition-all duration-300">
+                  <PhoneIcon className="w-5 h-5 text-white" />
+                </div>
+                <span className="text-gray-300 group-hover:text-white transition-colors">01 23 45 67 89</span>
+              </motion.div>
+              
+              <motion.div 
+                className="flex items-center space-x-3 group cursor-pointer"
+                whileHover={{ x: 5 }}
+                transition={{ duration: 0.2 }}
+              >
+                <div className="w-10 h-10 bg-gradient-to-br from-coral-500 to-warm-500 rounded-xl flex items-center justify-center group-hover:shadow-glow transition-all duration-300">
+                  <MapPinIcon className="w-5 h-5 text-white" />
+                </div>
+                <span className="text-gray-300 group-hover:text-white transition-colors">Paris, France</span>
+              </motion.div>
+            </motion.div>
+          </div>
+
+          {/* Links Sections */}
+          {Object.entries(footerLinks).map(([category, links], categoryIndex) => (
+            <motion.div
+              key={category}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.6 + categoryIndex * 0.1, duration: 0.6 }}
+            >
+              <h3 className="font-display font-semibold text-lg mb-6 text-white capitalize">
+                {category === 'platform' && 'Plateforme'}
+                {category === 'subjects' && 'Matières'}
+                {category === 'support' && 'Support'}
+                {category === 'legal' && 'Légal'}
+              </h3>
+              <ul className="space-y-3">
+                {links.map((link, linkIndex) => (
+                  <motion.li
+                    key={link.name}
+                    initial={{ opacity: 0, x: -10 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.8 + categoryIndex * 0.1 + linkIndex * 0.05 }}
+                  >
+                    <motion.a 
+                      href={link.href}
+                      className="text-gray-300 hover:text-white transition-colors duration-300 text-sm block py-1"
+                      whileHover={{ x: 5 }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      {link.name}
+                    </motion.a>
+                  </motion.li>
+                ))}
+              </ul>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Newsletter Section */}
+        <motion.div
+          className="mt-16 pt-12 border-t border-gray-700"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 1, duration: 0.6 }}
+        >
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+            <div>
+              <h3 className="text-2xl font-display font-bold mb-4">
+                Restez informé de nos actualités
+              </h3>
+              <p className="text-gray-300 mb-6">
+                Recevez nos conseils d'étude, nos success stories et nos offres exclusives
+              </p>
+            </div>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <input
+                type="email"
+                placeholder="Votre adresse email"
+                className="flex-1 px-6 py-4 bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl text-white placeholder-gray-400 focus:border-primary-500 focus:ring-0 transition-colors"
+              />
+              <motion.button
+                className="btn-primary whitespace-nowrap"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                S'abonner
+              </motion.button>
             </div>
           </div>
-
-          {/* Links */}
-          <div>
-            <h3 className="font-display font-semibold text-lg mb-4">Plateforme</h3>
-            <ul className="space-y-2">
-              {footerLinks.platform.map((link) => (
-                <li key={link.name}>
-                  <a 
-                    href={link.href}
-                    className="text-gray-300 hover:text-accent-400 transition-colors duration-200"
-                  >
-                    {link.name}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="font-display font-semibold text-lg mb-4">Support</h3>
-            <ul className="space-y-2">
-              {footerLinks.support.map((link) => (
-                <li key={link.name}>
-                  <a 
-                    href={link.href}
-                    className="text-gray-300 hover:text-accent-400 transition-colors duration-200"
-                  >
-                    {link.name}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="font-display font-semibold text-lg mb-4">Légal</h3>
-            <ul className="space-y-2">
-              {footerLinks.legal.map((link) => (
-                <li key={link.name}>
-                  <a 
-                    href={link.href}
-                    className="text-gray-300 hover:text-accent-400 transition-colors duration-200"
-                  >
-                    {link.name}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
+        </motion.div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-gray-400 text-sm">
-            © 2024 Objectif la Mention au Bac. Tous droits réservés.
-          </p>
-          
-          <div className="flex space-x-6 mt-4 md:mt-0">
-            <motion.button
-              className="text-gray-400 hover:text-accent-400 transition-colors"
-              whileHover={{ scale: 1.1 }}
+        <motion.div
+          className="mt-16 pt-8 border-t border-gray-700 flex flex-col md:flex-row justify-between items-center"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: 1.2, duration: 0.6 }}
+        >
+          <div className="flex items-center space-x-2 text-gray-400 text-sm mb-4 md:mb-0">
+            <span>© 2024 Objectif la Mention au Bac. Tous droits réservés.</span>
+            <span>Fait avec</span>
+            <motion.div
+              animate={{ scale: [1, 1.2, 1] }}
+              transition={{ duration: 1, repeat: Infinity }}
             >
-              <span className="sr-only">Facebook</span>
-              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M20 10C20 4.477 15.523 0 10 0S0 4.477 0 10c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V10h2.54V7.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V10h2.773l-.443 2.89h-2.33v6.988C16.343 19.128 20 14.991 20 10z" clipRule="evenodd" />
-              </svg>
-            </motion.button>
-            
-            <motion.button
-              className="text-gray-400 hover:text-accent-400 transition-colors"
-              whileHover={{ scale: 1.1 }}
-            >
-              <span className="sr-only">Instagram</span>
-              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M10 0C4.477 0 0 4.477 0 10s4.477 10 10 10 10-4.477 10-10S15.523 0 10 0zm4.896 4.896a.896.896 0 01.896.896v8.416a.896.896 0 01-.896.896H5.104a.896.896 0 01-.896-.896V5.792a.896.896 0 01.896-.896h8.792z" clipRule="evenodd" />
-              </svg>
-            </motion.button>
-            
-            <motion.button
-              className="text-gray-400 hover:text-accent-400 transition-colors"
-              whileHover={{ scale: 1.1 }}
-            >
-              <span className="sr-only">LinkedIn</span>
-              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.387-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248H8.014v-8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.526-1.387 2.703 0 3.203 1.778 3.203 4.092v4.711zM5.005 6.575a1.548 1.548 0 11-.003-3.096 1.548 1.548 0 01.003 3.096zm-1.337 9.763H6.34v-8.59H3.667v8.59zM17.668 1H2.328C1.595 1 1 1.581 1 2.298v15.403C1 18.418 1.595 19 2.328 19h15.34c.734 0 1.332-.582 1.332-1.299V2.298C19 1.581 18.402 1 17.668 1z" clipRule="evenodd" />
-              </svg>
-            </motion.button>
+              <HeartIcon className="w-4 h-4 text-coral-400" />
+            </motion.div>
+            <span>à Paris</span>
           </div>
-        </div>
+          
+          <div className="flex space-x-4">
+            {socialLinks.map((social, index) => (
+              <motion.a
+                key={social.name}
+                href={social.href}
+                className="w-12 h-12 bg-white/10 backdrop-blur-sm rounded-2xl flex items-center justify-center text-xl hover:bg-white/20 transition-all duration-300 hover:scale-110"
+                initial={{ opacity: 0, scale: 0 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 1.4 + index * 0.1, type: "spring" }}
+                whileHover={{ y: -2 }}
+                title={social.name}
+              >
+                {social.icon}
+              </motion.a>
+            ))}
+          </div>
+        </motion.div>
       </div>
     </footer>
   );
