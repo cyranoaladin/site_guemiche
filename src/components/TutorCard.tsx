@@ -36,7 +36,7 @@ const TutorCard: React.FC<TutorCardProps> = ({ tutor, index }) => {
 
   return (
     <motion.div
-      className="tutor-card relative"
+      className="tutor-card relative group"
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}

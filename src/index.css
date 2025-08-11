@@ -141,7 +141,7 @@
   }
 
   .tutor-card {
-    @apply card-glow p-6 group cursor-pointer;
+    @apply card-glow p-6 cursor-pointer;
   }
 
   .tutor-card:hover .tutor-avatar {
