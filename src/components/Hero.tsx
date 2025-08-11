@@ -66,8 +66,7 @@ const Hero = () => {
             transition={{ delay: 0.4 }}
             className="text-xl md:text-2xl text-white/90 mb-8 max-w-3xl mx-auto leading-relaxed"
           >
-            Notre plateforme connecte votre enfant avec des tuteurs experts qui transforment 
-            les difficultés en réussites et la frustration en confiance.
+            Des méthodes claires, une motivation durable, des résultats tangibles. Nous accompagnons votre réussite avec exigence et bienveillance.
           </motion.p>
 
           {/* CTA Buttons */}

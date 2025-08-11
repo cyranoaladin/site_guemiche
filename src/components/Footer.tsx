@@ -43,13 +43,13 @@ const Footer = () => {
                 <AcademicCapIcon className="w-6 h-6 text-white" />
               </div>
               <span className="text-2xl font-display font-bold">
-                Next<span className="text-gradient">Gen</span>
+                Objectif la <span className="text-gradient">Mention</span> au Bac
               </span>
             </motion.div>
             
             <p className="text-gray-300 mb-6 leading-relaxed">
-              La plateforme de cours particuliers qui révèle le potentiel de chaque élève. 
-              Rejoignez notre communauté de réussite.
+              Des méthodes claires, une motivation durable, des résultats tangibles. 
+              Rejoignez notre communauté de réussite au Bac.
             </p>
 
             {/* Contact Info */}
@@ -122,7 +122,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-400 text-sm">
-            © 2024 NextGen. Tous droits réservés.
+            © 2024 Objectif la Mention au Bac. Tous droits réservés.
           </p>
           
           <div className="flex space-x-6 mt-4 md:mt-0">

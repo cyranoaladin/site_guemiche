@@ -25,7 +25,7 @@ const Header = () => {
               <AcademicCapIcon className="w-6 h-6 text-white" />
             </div>
             <span className="text-xl font-display font-bold text-gray-900">
-              Next<span className="text-gradient">Gen</span>
+              Objectif la <span className="text-gradient">Mention</span> au Bac
             </span>
           </motion.div>
 
